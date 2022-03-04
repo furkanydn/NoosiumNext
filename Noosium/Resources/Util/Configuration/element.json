@@ -1,0 +1,16 @@
+{
+    "Elements": {
+        "Web": {
+            "session-username": ".horizontally > .right",
+            "session-logout": ".out",
+            "primary-menu-first": ".oo-primaryMenu > .item:nth-child(1)",
+            "primary-menu-second": ".oo-primaryMenu > .item:nth-child(2)",
+            "primary-menu-third": ".oo-primaryMenu > .item:nth-child(3)",
+            "secondary-menu-child-first": ".oo-secondaryMenu > .item:nth-child(1)",
+            "secondary-menu-child-first-circular": ".active > .circular:nth-child(1)",
+            "secondary-menu-child-second": ".oo-secondaryMenu > .item:nth-child(2)",
+            "secondary-menu-child-third": ".oo-secondaryMenu > .item:nth-child(3)",
+            "secondary-menu-child-four": ".oo-secondaryMenu > .item:nth-child(4)"
+        }
+    }
+}
