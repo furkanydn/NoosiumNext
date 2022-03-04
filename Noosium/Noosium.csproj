@@ -22,10 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Helper" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="Resources\appsettings.json" />
       <EmbeddedResource Include="Resources\appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
