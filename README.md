@@ -18,13 +18,14 @@ You must first download an IDE that can execute C# apps, such as Rider or Visual
     1. [Selenium-Webdriver](https://www.selenium.dev/)
 
 # Build and Test
-For Visual Studio:
-1.
+###[Visual Studio](https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022) 
+- (MacOS & Linux): The Unit Tests window is used to run unit tests and is opened using the View > Tests menu. Unit tests in your solution are automatically discovered and shown in this window, where you can run all of the tests or a set of tests that you've selected.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+- (Windows): When you build the test project, the tests appear in Test Explorer. If Test Explorer is not visible, choose Test on the Visual Studio menu, choose Windows, and then choose Test Explorer (or press Ctrl + E, T).
+
+###[Rider](https://www.jetbrains.com/help/rider/Unit_Testing__Index.html) 
+
+- (MacOS & Linux): To enable VSTest adapters support, select the corresponding checkbox on the Build, Execution, Deployment | Unit Testing | VSTest page of JetBrains Rider settings ⌃ ⌥ S.
+
+- (Windows): To enable VSTest adapters support, select the corresponding checkbox on the Build, Execution, Deployment | Unit Testing | VSTest page of JetBrains Rider settings ⌃ ⌥ S.
