@@ -1,20 +1,20 @@
 namespace Noosium.WebDriver.Mock
 {
-    using Resources.Log;
-    using TestCases.Desktop.Auth;
     using NUnit.Framework;
-    using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
-    using WebDriverManager;
-    using WebDriverManager.DriverConfigs.Impl;
-    using Resources.Util;
-    using Resources.Util.DriverMethods;
-    using Resources.Common.Private;
-    using System.Collections.Generic;
     using OpenQA.Selenium.Edge;
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.Opera;
     using OpenQA.Selenium.Safari;
+    using OpenQA.Selenium;
+    using Resources.Common.Private;
+    using Resources.Log;
+    using Resources.Util.DriverMethods;
+    using Resources.Util;
+    using System.Collections.Generic;
+    using TestCases.Desktop.Auth;
+    using WebDriverManager.DriverConfigs.Impl;
+    using WebDriverManager;
 
     public class BaseMockDriver
     {
@@ -57,7 +57,7 @@ namespace Noosium.WebDriver.Mock
             {
                 case "chrome":
                     new DriverManager().SetUpDriver(new ChromeConfig());
-                    Driver = new ChromeDriver();
+                    Driver = new ChromeDriver(ChromeOptionsManager());
                     new TestLog().Debug("The Google Chrome Driver was installed using custom settings.");
                     break;
                 case "edge":
@@ -112,12 +112,20 @@ namespace Noosium.WebDriver.Mock
         /// <returns>Custom Chrome Browser Capabilities</returns>
         private static ChromeOptions ChromeOptionsManager()
         {
-            var chromeOptions = new ChromeOptions
-            {
-                AcceptInsecureCertificates = true,
-                PlatformName = JsonSoft.GetAppSetting("Platform")
-            };
-            chromeOptions.AddAdditionalOption("options", TestCapabilitiesOptions());
+            /* If you run headless mode add two parameter
+             "--disable-gpu",
+             "--headless",
+             However, there is one problem. The invisible browser window is only 800x600 in size.
+             */
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments(
+                "start-maximized",
+                "enable-automation",
+                "--no-sandbox",
+                "--disable-infobars",
+                "--disable-dev-shm-usage",
+                "--disable-browser-side-navigation",
+                "--ignore-certificate-errors"); 
 
             return chromeOptions;
         }

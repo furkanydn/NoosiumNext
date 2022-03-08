@@ -33,7 +33,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Auth
             ClickOnElement(By.Name(ElementNames.Button));
             new TestLog().Information($"{ElementNames.Button} Clicked.");
             
-            Thread.Sleep(2000);
+            Thread.Sleep(10000);
             Assert.That(GetDriverUrl(),Is.EqualTo(JsonSoft.GetUri("BaseUrl")+JsonSoft.GetUri("AdminMissionCom")));
         }
 
