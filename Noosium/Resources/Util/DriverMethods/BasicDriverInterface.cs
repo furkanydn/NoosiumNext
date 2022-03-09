@@ -56,7 +56,7 @@ internal class BasicDriverInterface : BaseMockDriver
         WaitAndTimeOut.WaitTimeOut.WaitForElementVisible(locator);
         Driver.FindElement(locator).Click();
     }
-    
+
     /// <summary>
     /// This method is used to select a dropdown from a list based on its identifier.
     /// </summary>
@@ -127,5 +127,16 @@ internal class BasicDriverInterface : BaseMockDriver
     public static string GetDriverUrlWithOutSplit()
     {
         return Driver.Url;
+    }
+
+    /// <summary>
+    /// Get count target element visibility
+    /// </summary>
+    /// <param name="locator">Get count for target element</param>
+    /// <returns>If count bigger than zero return true</returns>
+    public static bool GetElementCountOn(By locator)
+    {
+        var element = Driver.FindElements(locator).Count;
+        return element > 0;
     }
 }

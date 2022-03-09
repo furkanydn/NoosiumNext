@@ -27,6 +27,7 @@ namespace Noosium.Resources.Common.Private
         public const string SecondaryMenuFour = "secondary-menu-child-four";
         
         public const string Missions = ".middle > .item:nth-child(1)";
+        public const string PageSideBarTopBarButton = "side-bar-top-bar-button";
 
         public const string PageSidebarMenuMission = "menu-item-nth-child(1)";
         public const string PageSidebarMenuMissionGenerateCom = "menu-item-active-nth-child(2)";
