@@ -14,10 +14,15 @@ namespace Noosium.TestSuites.TestFixtures
      TestFixture]
     public class MissionGenerateComLts : BaseMockDriver
     {
+        public MissionGenerateComLts()
+        {
+            CorrectMissionOpened_ClickedMenuItem();
+        }
+        
         [Test, Order(0)]
         public void CorrectMissionOpened_ClickedMenuItem()
         {
-            MissionGenerateCommunityLts.CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton();
+            MissionGenerateCommunity.CheckTheStages_ShouldSuccessfulMissionGenerate_WhenTheMissionMechanismIsSelected();
         }
     }
 }

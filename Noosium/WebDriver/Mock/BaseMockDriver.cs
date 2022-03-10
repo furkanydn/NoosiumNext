@@ -125,7 +125,8 @@ namespace Noosium.WebDriver.Mock
                 "--disable-infobars",
                 "--disable-dev-shm-usage",
                 "--disable-browser-side-navigation",
-                "--ignore-certificate-errors"); 
+                "--ignore-certificate-errors",
+                "--window-size=1366,768");
 
             return chromeOptions;
         }
