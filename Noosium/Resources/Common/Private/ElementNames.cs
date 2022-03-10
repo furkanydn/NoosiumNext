@@ -30,6 +30,10 @@ namespace Noosium.Resources.Common.Private
         public const string PageSidebarMenuMissionGenerateCom = "menu-item-active-nth-child(2)";
         // Mission Generate Startup Elements
         public const string MissionStartupMissionMechanicsLtsButton = "mission-startup-mission-mechanics-lts-button";
+        public const string MissionStartupContinueTheNextStep = "mission-startup-continue-the-next-step";
+        public const string MissionStartupMissionMechanicsLtsInfoAreaHeader = "mission-startup-mission-mechanics-lts-info-area-header";
+        public const string MissionStartupMissionMechanicsLtsInfoAreaContext = "mission-startup-mission-mechanics-lts-info-area-context";
+        public const string MissionStartupAutoSaveLabel = "mission-startup-auto-save-label";
     }
 }
 

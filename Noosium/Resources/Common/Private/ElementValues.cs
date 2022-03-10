@@ -13,10 +13,13 @@ namespace Noosium.Resources.Common.Private
         public const string InvalidCaptcha = "ICaptcha";
     }
 
-    internal struct ElementErrorMessages
+    internal struct ElementMessages
     {
         public const string FormMessagesText = "Lütfen resimdeki karakterleri doğru giriniz.";
         public const string AccountDoesNotExist = "Account does not exist or password is incorrect.";
+        public const string LtsInfoBoxHeader = "Limitsiz";
+        public const string LtsInfoBoxText =
+            "Limitsiz\\\\nKatılımcılar herhangi bir limite ulaşmaya çalışmadan en iyiyi yapmayı hedeflemeli.";
     }
     
     internal struct ElementSetting

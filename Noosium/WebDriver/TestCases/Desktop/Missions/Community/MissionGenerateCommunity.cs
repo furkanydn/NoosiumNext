@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
 {
     using OpenQA.Selenium;
@@ -12,6 +14,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
         {
             new TestLog().Debug($"{GetDriverUrlWithOutSplit()} opening.");
             ClickTheMissionGenerateButtonInTheSideBar();
+            CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton();
         }
 
         /// <summary>
@@ -44,8 +47,17 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
         /// </summary>
         private static void CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton()
         {
-            //limitsiz
+            // If the auto save button is not checked, click the button
+            if (CheckBoxElementIsChecked(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupAutoSaveLabel)))==false)
+                ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupAutoSaveLabel)));
+            
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)));
+            new TestLog().Information(
+                $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
+            Assert.That(
+                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsInfoAreaContext)),
+                Is.EqualTo(ElementMessages.LtsInfoBoxText));
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep)));
             new TestLog().Information(
                 $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
         }

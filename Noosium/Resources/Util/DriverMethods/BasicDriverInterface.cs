@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Linq.Expressions;
 using Noosium.Resources.Common.Private;
 using Noosium.WebDriver.Mock;
@@ -57,6 +58,25 @@ internal class BasicDriverInterface : BaseMockDriver
         Driver.FindElement(locator).Click();
     }
 
+    /// <summary>
+    /// Gets a value indicating whether or not this element is selected.
+    /// </summary>
+    /// <param name="locator">Property Value Type: Boolean</param>
+    /// <returns>return element is selected.</returns>
+    public static bool CheckBoxElementIsChecked(By locator)
+    {
+        var checkbox = false;
+        try
+        {
+            checkbox =  Driver.FindElement(locator).Selected;
+        }
+        catch (StaleElementReferenceException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        return checkbox;
+    }
+    
     /// <summary>
     /// This method is used to select a dropdown from a list based on its identifier.
     /// </summary>

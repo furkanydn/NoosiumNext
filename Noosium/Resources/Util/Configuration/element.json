@@ -14,7 +14,11 @@
             "side-bar-top-bar-button":".bars",
             "menu-item-nth-child(1)": ".item:nth-child(1) > .content",
             "menu-item-active-nth-child(2)": ".list:nth-child(2) > .item:nth-child(2) > .content",
-            "mission-startup-mission-mechanics-lts-button": ".fluid:nth-child(1) > .center"
+            "mission-startup-mission-mechanics-lts-button": ".fluid:nth-child(1) > .center",
+            "mission-startup-mission-mechanics-lts-info-area-header": ".visible > .content > .header",
+            "mission-startup-mission-mechanics-lts-info-area-context": ".icon:nth-child(3) > .content",
+            "mission-startup-continue-the-next-step": ".basic > .violet",
+            "mission-startup-auto-save-label": "label"
         }
     }
 }

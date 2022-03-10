@@ -14,7 +14,7 @@ namespace Noosium.TestSuites
         public void MissionListCom() => new MissionListCom();
 
         [Test, Order(1)]
-        public void MissionGenerateComLts() => new MissionGenerateComLts();
+        public void MissionGenerateComLts() => new MissionGenerateCom();
     }
 }
 

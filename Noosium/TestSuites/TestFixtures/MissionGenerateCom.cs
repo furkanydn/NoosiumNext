@@ -12,9 +12,9 @@ namespace Noosium.TestSuites.TestFixtures
      Order(2),
      Platform(Exclude = IFixtureE.Exclude),
      TestFixture]
-    public class MissionGenerateComLts : BaseMockDriver
+    public class MissionGenerateCom : BaseMockDriver
     {
-        public MissionGenerateComLts()
+        public MissionGenerateCom()
         {
             CorrectMissionOpened_ClickedMenuItem();
         }

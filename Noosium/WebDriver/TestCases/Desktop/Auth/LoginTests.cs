@@ -60,7 +60,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Auth
             ClickOnElement(By.Name(ElementNames.Button));
             new TestLog().Debug($"{ElementNames.Button} Clicked.");
             
-            Assert.That(GetText(By.CssSelector(ElementNames.AlertStrong)),Is.EqualTo(ElementErrorMessages.AccountDoesNotExist));
+            Assert.That(GetText(By.CssSelector(ElementNames.AlertStrong)),Is.EqualTo(ElementMessages.AccountDoesNotExist));
         }
 
         public static void CheckResponse_ShouldDisplayFormMessageError_WhenInvalidCaptcha()
@@ -86,7 +86,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Auth
             ClickOnElement(By.Name(ElementNames.Button));
             new TestLog().Debug($"{ElementNames.Button} Clicked.");
             
-            Assert.That(GetText(By.Id(ElementNames.FormMessages)),Is.EqualTo(ElementErrorMessages.FormMessagesText));
+            Assert.That(GetText(By.Id(ElementNames.FormMessages)),Is.EqualTo(ElementMessages.FormMessagesText));
         }
     }
 }
