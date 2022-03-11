@@ -1,7 +1,7 @@
 using System;
-using System.Diagnostics;
 using System.Linq.Expressions;
 using Noosium.Resources.Common.Private;
+using Noosium.Resources.Util.WaitAndTimeOut;
 using Noosium.WebDriver.Mock;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -54,7 +54,7 @@ internal class BasicDriverInterface : BaseMockDriver
     /// <param name="locator">An ICoordinates describing where to click.</param>
     public static void ClickOnElement(By locator)
     {
-        WaitAndTimeOut.WaitTimeOut.WaitForElementVisible(locator);
+        WaitTimeOut.WaitForElementVisible(locator);
         Driver.FindElement(locator).Click();
     }
 
@@ -65,16 +65,8 @@ internal class BasicDriverInterface : BaseMockDriver
     /// <returns>return element is selected.</returns>
     public static bool CheckBoxElementIsChecked(By locator)
     {
-        var checkbox = false;
-        try
-        {
-            checkbox =  Driver.FindElement(locator).Selected;
-        }
-        catch (StaleElementReferenceException e)
-        {
-            Console.WriteLine(e.Message);
-        }
-        return checkbox;
+        var checkbox = Driver.FindElement(locator);
+        return checkbox.Selected != false;
     }
     
     /// <summary>
@@ -129,7 +121,7 @@ internal class BasicDriverInterface : BaseMockDriver
     /// <param name="requiredText">The text to type into the element.</param>
     public static void SendKeys(By locator, string requiredText)
     {
-        Driver.FindElement(locator).Clear();
+        WaitTimeOut.WaitForElementVisible(locator);
         Driver.FindElement(locator).SendKeys(requiredText);
     }
     
@@ -158,5 +150,18 @@ internal class BasicDriverInterface : BaseMockDriver
     {
         var element = Driver.FindElements(locator).Count;
         return element > 0;
+    }
+    
+    /// <summary>
+    /// Executes JavaScript in the context of the currently selected frame or window.
+    /// </summary>
+    /// <param name="script">The JavaScript code to execute.</param>
+    /// <param name="locator">The arguments to the script.</param>
+    /// <returns>The value returned by the script.</returns>
+    public static void JsExecuteScript(string script, By locator)
+    {
+        var element = Driver.FindElement(locator);
+        var scriptExecutor = (IJavaScriptExecutor) Driver;
+        scriptExecutor.ExecuteScript(script, element);
     }
 }

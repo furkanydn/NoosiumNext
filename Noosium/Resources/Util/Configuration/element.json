@@ -18,7 +18,14 @@
             "mission-startup-mission-mechanics-lts-info-area-header": ".visible > .content > .header",
             "mission-startup-mission-mechanics-lts-info-area-context": ".icon:nth-child(3) > .content",
             "mission-startup-continue-the-next-step": ".basic > .violet",
-            "mission-startup-auto-save-label": "label"
+            "mission-startup-auto-save-label": "label",
+            "mission-startup-top-area-header-value": ".floated > .header",
+            "mission-startup-top-area-header-text": ".large:nth-child(2) > .content",
+            "mission-startup-level-two-input": ".right > .required > input",
+            "mission-startup-top-area-large-header": ".large:nth-child(1) > .content",
+            "mission-startup-level-three-purpose-input": ".required:nth-child(2) > textarea",
+            "mission-startup-level-three-description-input": "p",
+            "mission-startup-level-three-ql-editor": ".ql-editor"
         }
     }
 }
