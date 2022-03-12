@@ -18,7 +18,9 @@ namespace Noosium.Resources.Common.Private
         public const string MissionGeneratePurpose = "Esas amacı anlatan özlü bir söz kullanabilirsin.";
         // Ql Editor Contexts
         public const string QlEditorFirstText =
-            "if(arguments[0].contentEditable === 'true') {arguments[0].innerText = 'bur bir görevin anlaşılması için hikaye yazabilirsin.'}";
+            "if(arguments[0].contentEditable === 'true') {arguments[0].innerText = 'Bu görevin anlaşılması için hikaye yazabilirsin.'}";
+        public const string QlEditorSecondText =
+            "if(arguments[0].contentEditable === 'true') {arguments[0].innerText = 'Bu görevin anlaşılması için hikaye <strong>yazabilirsin.</strong>'}";
     }
 
     internal struct ElementMessages

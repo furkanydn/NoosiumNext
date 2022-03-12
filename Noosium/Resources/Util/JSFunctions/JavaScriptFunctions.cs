@@ -6,6 +6,11 @@ namespace Noosium.Resources.Util.JSFunctions;
 
 public class JavaScriptFunctions : BaseMockDriver
 {
+    public static JavaScriptFunctions CreateInstance()
+    {
+        return new JavaScriptFunctions();
+    }
+
     /// <summary>
     /// Indicates that a driver can execute JavaScript, providing access to the mechanism to do so. Because of cross domain policies browsers enforce your script execution may fail unexpectedly and without adequate error messaging. This is particularly pertinent when creating your own XHR request or when trying to access another frame. Most times when troubleshooting failure it's best to view the browser's console after executing the WebDriver request.
     /// </summary>
@@ -53,5 +58,17 @@ public class JavaScriptFunctions : BaseMockDriver
     public static void JavaScriptTillPoint(string xAxis, string yAxis)
     {
         GetJavaScriptExecutor().ExecuteScript("scroll(" + xAxis + "," + yAxis + ");");
+    }
+
+    /// <summary>
+    /// Executes JavaScript in the context of the currently selected frame or window.
+    /// </summary>
+    /// <param name="locator">The arguments to the script.</param>
+    /// <param name="script">The JavaScript code to execute.</param>
+    /// <returns>The value returned by the script.</returns>
+    public static void JavaScriptExeScript(By locator, string script)
+    {
+        var element = Driver.FindElement(locator);
+        GetJavaScriptExecutor().ExecuteScript(script, element);
     }
 }

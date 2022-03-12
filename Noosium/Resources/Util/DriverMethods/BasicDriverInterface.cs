@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics;
 using System.Linq.Expressions;
 using Noosium.Resources.Common.Private;
+using Noosium.Resources.Util.JSFunctions;
 using Noosium.Resources.Util.WaitAndTimeOut;
 using Noosium.WebDriver.Mock;
 using OpenQA.Selenium;
@@ -65,8 +67,8 @@ internal class BasicDriverInterface : BaseMockDriver
     /// <returns>return element is selected.</returns>
     public static bool CheckBoxElementIsChecked(By locator)
     {
-        var checkbox = Driver.FindElement(locator);
-        return checkbox.Selected != false;
+        var checkbox = Driver.FindElement(locator).Selected;
+        return checkbox;
     }
     
     /// <summary>
@@ -121,7 +123,8 @@ internal class BasicDriverInterface : BaseMockDriver
     /// <param name="requiredText">The text to type into the element.</param>
     public static void SendKeys(By locator, string requiredText)
     {
-        WaitTimeOut.WaitForElementVisible(locator);
+        WaitTimeOut.ImplicitWait(15);
+        Driver.FindElement(locator).Clear();
         Driver.FindElement(locator).SendKeys(requiredText);
     }
     
@@ -151,17 +154,40 @@ internal class BasicDriverInterface : BaseMockDriver
         var element = Driver.FindElements(locator).Count;
         return element > 0;
     }
-    
+
     /// <summary>
-    /// Executes JavaScript in the context of the currently selected frame or window.
+    /// For many Selenium commands, a target is required.
+    /// This target identifies an element in the content of the web application,
+    /// and consists of the location strategy followed by the location in the format locatorType=location. 
     /// </summary>
-    /// <param name="script">The JavaScript code to execute.</param>
-    /// <param name="locator">The arguments to the script.</param>
-    /// <returns>The value returned by the script.</returns>
-    public static void JsExecuteScript(string script, By locator)
+    /// <param name="locator">Identifier type</param>
+    /// <returns>Switching using a WebElement is the most flexible option.</returns>
+    public static IWebElement GetElementWithByStrategy(By locator)
     {
         var element = Driver.FindElement(locator);
-        var scriptExecutor = (IJavaScriptExecutor) Driver;
-        scriptExecutor.ExecuteScript(script, element);
+        return element;
+    }
+
+    /// <summary>
+    /// Multi Action sequences are divided into a series of "actions". At each action,the WebDriver will perform a single action for each device included in the action sequence.
+    /// At mainClick,the driver will perform the first action defined for each device, at optionalClick the second action for each device,
+    /// and so on until all actions have been executed. If an individual device does not have an action defined at a particular actions,it will automatically pause. After that, it is planned to run the necessary script.
+    /// </summary>
+    /// <param name="mainClick">First element for the action</param>
+    /// <param name="optionalClick">Second element for the action, this object is optional</param>
+    /// <param name="elementForScript">Script element requests the object to be applied</param>
+    /// <param name="scriptForExecute">Object that needs to be executed.</param>
+    public static void MultiActionForEditor(By mainClick, By? optionalClick, By elementForScript, string scriptForExecute)
+    {
+        try
+        {
+            ClickOnElement(mainClick);
+            if (optionalClick != null) ClickOnElement(optionalClick);
+            JavaScriptFunctions.JavaScriptExeScript(elementForScript, scriptForExecute);
+        }
+        catch (ArgumentException argumentException)
+        {
+            Debug.WriteLine("One or more of the required elements for sending to the method are missing.");
+        }
     }
 }

@@ -43,6 +43,8 @@ namespace Noosium.Resources.Common.Private
         public const string MissionStartupLevelThreePurposeInput = "mission-startup-level-three-purpose-input";
         public const string MissionStartupLevelThreeDescriptionInput ="mission-startup-level-three-description-input";
         public const string MissionStartupLevelThreeQlEditor = "mission-startup-level-three-ql-editor";
+        public const string MissionStartupLevelThreeQlEditorBold = "mission-startup-level-three-ql-editor-bold";
+        
     }
 }
 

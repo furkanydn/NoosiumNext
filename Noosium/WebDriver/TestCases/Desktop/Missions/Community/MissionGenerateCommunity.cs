@@ -1,3 +1,6 @@
+using Noosium.Resources.Util.ActionBuilder;
+using Noosium.Resources.Util.JSFunctions;
+
 namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
 {
     using OpenQA.Selenium;
@@ -55,10 +58,10 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
         private static void CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton()
         {
             // If the auto save button is not checked, click the button
-            if (CheckBoxElementIsChecked(
-                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupAutoSaveLabel))) == false)
+            /* This method,a little buggy, because it doesn't recognize the selected return value.
+             if (CheckBoxElementIsChecked(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupAutoSaveLabel))) == false)
                 ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupAutoSaveLabel)));
-
+            */
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)));
             new TestLog().Information(
                 $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
@@ -73,7 +76,9 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
             Assert.That(
                 GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderValue))),
                 Is.EqualTo(ElementValues.DataZero));
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep)));
+            ActionBuilders.SetFocusAndClickOnIWebElement(
+                GetElementWithByStrategy(
+                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
             new TestLog().Information(
                 $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
         }
@@ -91,26 +96,36 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
             Assert.That(
                 GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaLargeHeader))),
                 Is.EqualTo(ElementValues.MissionGenerateName));
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep)));
+            ActionBuilders.SetFocusAndClickOnIWebElement(
+                GetElementWithByStrategy(
+                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
             new TestLog().Information(
-                $"{JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)} Clicked.");
+                $"{ElementNames.MissionStartupMissionMechanicsLtsButton} Clicked.");
         }
 
         private static void CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)));
-            new TestLog().Information($"{JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)} Clicked.");
+            new TestLog().Information($"{ElementNames.MissionStartupLevelThreePurposeInput} Clicked.");
             SendKeys(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)),
                 ElementValues.MissionGeneratePurpose);
             new TestLog().Information(
-                $"{JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)} object {ElementValues.MissionGeneratePurpose} Sent.");
-            ClickOnElement(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeDescriptionInput)));
-            new TestLog().Information(
-                $"{JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeDescriptionInput)} Clicked.");
-            JsExecuteScript(ElementValues.QlEditorFirstText,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)));
+                $"{ElementNames.MissionStartupLevelThreePurposeInput} object {ElementValues.MissionGeneratePurpose} Sent.");
             
+            MultiActionForEditor(
+                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeDescriptionInput)),
+                null,
+                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
+                ElementValues.QlEditorFirstText);
+            new TestLog().Information( $"{ElementNames.MissionStartupLevelThreeDescriptionInput} Clicked.");
+            new TestLog().Information( $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorFirstText} Sent.");
+            
+            //error - chrome browser clickable strategy
+            MultiActionForEditor(
+                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorBold)),
+                null,
+                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
+                ElementValues.QlEditorSecondText);
         }
 
         #endregion

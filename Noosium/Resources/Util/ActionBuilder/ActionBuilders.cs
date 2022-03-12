@@ -38,7 +38,7 @@ public class ActionBuilders : BaseMockDriver
     /// <returns>A self reference.</returns>
     public static void SetFocusAndClickOnIWebElement(IWebElement webElement)
     {
-        ActionBuilder().MoveToElement(webElement,0,0).Click().Build().Perform();
+        ActionBuilder().MoveToElement(webElement,1,1).Click().Build().Perform();
     }
 
     /// <summary>

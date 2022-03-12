@@ -25,7 +25,8 @@
             "mission-startup-top-area-large-header": ".large:nth-child(1) > .content",
             "mission-startup-level-three-purpose-input": ".required:nth-child(2) > textarea",
             "mission-startup-level-three-description-input": "p",
-            "mission-startup-level-three-ql-editor": ".ql-editor"
+            "mission-startup-level-three-ql-editor": ".ql-editor",
+            "mission-startup-level-three-ql-editor-bold": ".ql-bold .ql-stroke:nth-child(2)"
         }
     }
 }
