@@ -26,7 +26,16 @@
             "mission-startup-level-three-purpose-input": ".required:nth-child(2) > textarea",
             "mission-startup-level-three-description-input": "p",
             "mission-startup-level-three-ql-editor": ".ql-editor",
-            "mission-startup-level-three-ql-editor-bold": ".ql-bold .ql-stroke:nth-child(2)"
+            "mission-startup-level-three-ql-editor-bold": ".ql-bold",
+            "mission-startup-level-three-ql-editor-picker-label": ".ql-picker-label",
+            "mission-startup-level-three-ql-editor-picker-label-th": ".ql-picker-item:nth-child(3)",
+            "mission-startup-level-three-ql-editor-picker-label-tw": ".ql-picker-item:nth-child(2)",
+            "mission-startup-level-three-ql-editor-italic": ".ql-italic",
+            "mission-startup-level-three-ql-editor-h3": "h3",
+            "mission-startup-level-three-ql-editor-underline": ".ql-underline",
+            "mission-startup-level-three-ql-editor-list-item-one": ".ql-list:nth-child(1)",
+            "mission-startup-level-three-ql-editor-list-item-two": ".ql-list:nth-child(2)",
+            "mission-startup-level-three-ql-editor-clean": ".ql-clean"
         }
     }
 }
