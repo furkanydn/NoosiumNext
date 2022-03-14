@@ -14,6 +14,7 @@ namespace Noosium.Resources.Common.Private
         // Element Data Value
         public const string DataZero = "0%";
         public const string DataSix = "6%";
+        public const string DataTwelve = "12%";
         public const string MissionGenerateName = "testmissiongenerateselenium";
         public const string MissionGeneratePurpose = "Esas amacı anlatan özlü bir söz kullanabilirsin.";
         // Ql Editor Contexts

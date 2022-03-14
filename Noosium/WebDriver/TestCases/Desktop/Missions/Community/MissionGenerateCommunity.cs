@@ -15,7 +15,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
         {
             new TestLog().Debug($"{GetDriverUrlWithOutSplit()} opening.");
             ClickTheMissionGenerateButtonInTheSideBar();
-            GeneralDefinitionsMethods();
+            GeneralDefinitionsMethodsForLimitless();
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
         /// <summary>
         /// General description of the mission operations, type, schedule, listing, etc.
         /// </summary>
-        private static void GeneralDefinitionsMethods()
+        private static void GeneralDefinitionsMethodsForLimitless()
         {
             CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton();
             CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
@@ -101,7 +101,6 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
             new TestLog().Information(
                 $"{ElementNames.MissionStartupMissionMechanicsLtsButton} Clicked.");
         }
-
         private static void CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)));
@@ -177,6 +176,19 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community
                 ElementValues.QlEditorNineText);
             new TestLog().Information( $"{ElementNames.MissionStartupLevelThreeQlEditorClean} Clicked.");
             new TestLog().Information( $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorNineText} Sent.");
+            
+            Assert.That(
+                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderValue))),
+                Is.EqualTo(ElementValues.DataTwelve));
+            ActionBuilders.SetFocusAndClickOnIWebElement(
+                GetElementWithByStrategy(
+                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
+            new TestLog().Information(
+                $"{ElementNames.MissionStartupMissionMechanicsLtsButton} Clicked.");
+        }
+        private static void CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor()
+        {
+            
         }
 
         #endregion
