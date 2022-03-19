@@ -1,7 +1,7 @@
-namespace Noosium.TestSuites.TestFixtures
+namespace Noosium.TestSuites.TestFixtures.Missions
 {
     using Resources.Common.Attribute;
-    using WebDriver.TestCases.Desktop.Missions.Community;
+    using Noosium.WebDriver.TestCases.Desktop.Missions.Community.List;
     using NUnit.Framework;
 
     [Author(IFixtureAuthorAttr.Admin),
@@ -11,13 +11,13 @@ namespace Noosium.TestSuites.TestFixtures
      Order(1),
      Platform(Exclude = IFixtureE.Exclude),
      TestFixture]
-    public class MissionListCom
+    public class CommunityMissionList
     {
 
         /// <summary>
         /// It's the approach for making it globally available in an externally accessible form.
         /// </summary>
-        public MissionListCom()
+        public void TF_CommunityMissionList()
         {
             CorrectMissionDisplayed_When_SwitchTheMenus();
         }

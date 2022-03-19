@@ -1,9 +1,9 @@
-namespace Noosium.TestSuites.TestFixtures
+namespace Noosium.TestSuites.TestFixtures.Authorization
 {
-    using NUnit.Framework;
     using Resources.Log;
     using WebDriver.Mock;
     using WebDriver.TestCases.Desktop.Auth;
+    using NUnit.Framework;
 
     [TestFixture,
      Order(0),
@@ -21,12 +21,15 @@ namespace Noosium.TestSuites.TestFixtures
         }
 
         [Test, Order(3)]
-        public void CorrectTitleDisplayed_When_NavigateToHomePage() => LoginTests.CheckResponse_ShouldNavigateToMissionPage_WhenValidIdPasswordEntered();
+        public void CorrectTitleDisplayed_When_NavigateToHomePage() =>
+            LoginTests.CheckResponse_ShouldNavigateToMissionPage_WhenValidIdPasswordEntered();
 
         [Test, Order(2)]
-        public void CorrectAlertDisplayed_When_InvalidIdPassword() => LoginTests.CheckResponse_ShouldDisplayAlertComponent_WhenInvalidIdPasswordEntered_();
+        public void CorrectAlertDisplayed_When_InvalidIdPassword() =>
+            LoginTests.CheckResponse_ShouldDisplayAlertComponent_WhenInvalidIdPasswordEntered_();
 
         [Test, Order(1)]
-        public void CorrectFormMessageDisplayed_When_InvalidCaptcha() => LoginTests.CheckResponse_ShouldDisplayFormMessageError_WhenInvalidCaptcha();
+        public void CorrectFormMessageDisplayed_When_InvalidCaptcha() =>
+            LoginTests.CheckResponse_ShouldDisplayFormMessageError_WhenInvalidCaptcha();
     }
 }
