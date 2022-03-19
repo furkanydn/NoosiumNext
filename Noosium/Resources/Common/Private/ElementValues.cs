@@ -5,12 +5,6 @@ namespace Noosium.Resources.Common.Private
     /// </summary>
     internal struct ElementValues
     {
-        public const string UserName = "Username";
-        public const string InvalidUserName = "IUsername";
-        public const string Password = "Password";
-        public const string InvalidPassword = "IPassword";
-        public const string Captcha = "Captcha";
-        public const string InvalidCaptcha = "ICaptcha";
         // Element Data Value
         public const string DataZero = "0%";
         public const string DataSix = "6%";
@@ -50,7 +44,6 @@ namespace Noosium.Resources.Common.Private
     internal struct ElementSetting
     {
         public const string BaseUrl = "BaseUrl";
-        public const string AdminMissionCom = "Admin/Missions/COM";
     }
 }
 

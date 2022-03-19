@@ -5,13 +5,6 @@ namespace Noosium.Resources.Common.Private
     /// </summary>
     internal struct ElementNames
     {
-        // Web Login
-        public const string Username = "username";
-        public const string Password = "password";
-        public const string CaptchaCode = "captchaCode";
-        public const string Button = "button";
-        public const string FormMessages = "form-messages";
-        public const string AlertStrong = "strong";
         // Mission Community
         public const string SessionUsername = "session-username";
         public const string SessionLogOut = "session-logout";
