@@ -9,6 +9,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
     using OpenQA.Selenium;
     using ObjectFactory.PageObject;
     using static Resources.Util.DriverMethods.BasicDriverInterface;
+    using ObjectFactory.Component.TextShortcut;
 
     public static class CommunityMissionGenerateCase
     {
@@ -38,25 +39,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
 
         private static void CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton()
         {
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)));
-            new TestLog().Information(
-                $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
-            // Asserts
-            Assert.That(
-                GetText(By.CssSelector(
-                    JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsInfoAreaContext))),
-                Is.EqualTo(ElementMessages.LtsInfoBoxText));
-            Assert.That(
-                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderText))),
-                Is.EqualTo(ElementMessages.MissionGenerateHeader));
-            Assert.That(
-                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderValue))),
-                Is.EqualTo(ElementValues.DataZero));
-            ActionBuilders.SetFocusAndClickOnIWebElement(
-                GetElementWithByStrategy(
-                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
-            new TestLog().Information(
-                $"{GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupMissionMechanicsLtsButton)))} Clicked.");
+            ObjectFactory.Component.TextShortcut.Generate.Mechanism(GenerateMechanism.Lts);
         }
 
         private static void CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()

@@ -1,12 +1,9 @@
-using Noosium.Resources.Common.Private;
-using Noosium.Resources.Log;
-using Noosium.Resources.Util;
-using OpenQA.Selenium;
-using static Noosium.Resources.Util.DriverMethods.BasicDriverInterface;
-
 namespace Noosium.WebDriver.ObjectFactory.PageObject
 {
-    
+    using Resources.Log;
+    using Resources.Util;
+    using OpenQA.Selenium;
+    using static Resources.Util.DriverMethods.BasicDriverInterface;
     public static class SideBar
     {
         /// <summary>
