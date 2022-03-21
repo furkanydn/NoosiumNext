@@ -17,6 +17,7 @@ namespace Noosium.TestSuites.TestFixtures.Missions
         public void TF_CommunityMissionGenerate()
         {
             TC_CorrectMissionOpened_ClickedMenuItem();
+            TC_CheckRightDefinitionOptions_ShouldBeCorrectGeneralDefinitions_WhenFillingComponentsWithGivenValues();
         }
 
         [Test, Order(0)]

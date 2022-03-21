@@ -1,12 +1,6 @@
 namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
 {
-    using Resources.Common.Private;
     using Resources.Log;
-    using Resources.Util;
-    using Resources.Util.ActionBuilder;
-    using Resources.Util.JSFunctions;
-    using NUnit.Framework;
-    using OpenQA.Selenium;
     using ObjectFactory.PageObject;
     using static Resources.Util.DriverMethods.BasicDriverInterface;
     using ObjectFactory.Component.TextShortcut;
@@ -18,6 +12,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
             new TestLog().Debug($"{GetDriverUrlWithOutSplit()} opening.");
             SideBar.SideBarMethod();
         }
+
         public static void CheckTheStages_ShouldSuccessfullyGeneralDefinitions_WhenTheMissionDefinitionsTyped()
         {
             GeneralDefinitionsMethodsForLimitless();
@@ -35,6 +30,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
             CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
             CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
             CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor();
+            CheckImageSelect_ShouldChooseTheRightImage_WhenImageSelectedFromTheImageSelector();
         }
 
         #endregion
@@ -48,6 +44,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         {
             Generate.Mechanism(GenerateMechanism.Lts);
         }
+
         /// <summary>
         /// The technique will be used to test the mission's name.
         /// </summary>
@@ -55,6 +52,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         {
             Generate.QlEditorMissionName();
         }
+
         /// <summary>
         /// The technique will be used to test the mission's description.
         /// </summary>
@@ -62,12 +60,21 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         {
             Generate.QlEditorMissionDescription();
         }
+
         /// <summary>
         /// The scope and conditions that should be stated in the fourth step are written in this method tests.
         /// </summary>
         private static void CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor()
         {
             Generate.QlBlankRequiredConditions();
+        }
+
+        /// <summary>
+        /// Checks that the image selection component has selected the right image.
+        /// </summary>
+        private static void CheckImageSelect_ShouldChooseTheRightImage_WhenImageSelectedFromTheImageSelector()
+        {
+            Generate.VisualIllustratesTheStoryOfTheMission();
         }
 
         #endregion

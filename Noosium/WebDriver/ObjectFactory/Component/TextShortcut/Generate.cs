@@ -160,14 +160,12 @@ namespace Noosium.WebDriver.ObjectFactory.Component.TextShortcut
         }
         public static void QlBlankRequiredConditions()
         {
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(EStruct.QlBlank)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(EStruct.QlBlankEditor)),
-                EStruct.QlBlankText);
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.QlBlank)));
             new TestLog().Information($"{EStruct.QlBlank} Clicked.");
+            SendKeys(By.CssSelector(JsonSoft.GetElement(EStruct.QlBlank)),
+                EStruct.QlBlankText);
             new TestLog().Information(
-                $"{EStruct.QlBlankEditor} Object. {EStruct.QlBlankText} Sent.");
+                $"{EStruct.QlBlank} object {EStruct.QlBlankText} Sent.");
             Assert.That(
                 GetText(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupTopAreaHeaderValue))),
                 Is.EqualTo(EStruct.DataEighteen));
@@ -176,7 +174,32 @@ namespace Noosium.WebDriver.ObjectFactory.Component.TextShortcut
                 GetElementWithByStrategy(
                     By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupContinueTheNextStep))));
             new TestLog().Information(
-                $"{EStruct.MissionStartupMissionMechanicsLtsButton} Clicked.");
+                $"{EStruct.MissionStartupContinueTheNextStep} Clicked.");
+        }
+        public static void VisualIllustratesTheStoryOfTheMission()
+        {
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveCircular)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveCircular} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveContentOne)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveContentOne} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveAcceptButton)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveAcceptButton} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveDelete)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveDelete} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveCircular)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveCircular} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveContentTwo)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveContentOne} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveAcceptButton)));
+            new TestLog().Information($"{EStruct.MissionStartupLevelFiveAcceptButton} Clicked.");
+            Assert.That(
+                GetText(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupTopAreaHeaderValue))),
+                Is.EqualTo(EStruct.DataTwentyFour));
+            Assert.That(GetText(By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupLevelFiveQuestion))),Is.EqualTo(EStruct.MissionStartupLevelFiveQuestionText));
+            ActionBuilders.SetFocusAndClickOnIWebElement(
+                GetElementWithByStrategy(
+                    By.CssSelector(JsonSoft.GetElement(EStruct.MissionStartupContinueTheNextStep))));
+            new TestLog().Information($"{EStruct.MissionStartupContinueTheNextStep} Clicked.");
         }
     }
 
@@ -243,13 +266,21 @@ namespace Noosium.WebDriver.ObjectFactory.Component.TextShortcut
             "if(arguments[0].contentEditable === 'true') {arguments[0].innerText = '<p>bur bir görevin anlaşılması için hikaye <strong><em>yazabilirsin.</em></strong></p>'}";
         internal const string DataTwelve = "12%";
         internal const string QlBlank = "mission-startup-level-four-ql-blank";
-        internal const string QlBlankEditor = ".field:nth-child(2) .ql-editor";
         internal const string QlBlankText =
-            "if(arguments[0].contentEditable === 'true') {arguments[0].innerText = '<p>It would be useful to write down the scope and conditions of what needs to be done, item by item.</p>'}";
+            "It would be useful to write down the scope and conditions of what needs to be done, item by item.";
         internal const string DataEighteen = "18%";
         internal const string MissionStartupLevelFourQuestion = "mission-startup-level-four-question";
         internal const string MissionStartupLevelFourQuestionText =
             "Görev için sağlanması gereken şartlar nelerdir?\nYapılması gerekenlerin kapsam ve koşullarını madde madde yazman faydalı olacaktır.";
+        internal const string MissionStartupLevelFiveCircular = "mission-startup-level-five-circular";
+        internal const string MissionStartupLevelFiveContentOne = "mission-startup-level-five-content-one";
+        internal const string MissionStartupLevelFiveAcceptButton = "mission-startup-level-five-accept-button";
+        internal const string MissionStartupLevelFiveContentTwo = "mission-startup-level-five-content-two";
+        internal const string MissionStartupLevelFiveDelete = "mission-startup-level-five-delete";
+        internal const string DataTwentyFour = "24%";
+        internal const string MissionStartupLevelFiveQuestion = "mission-startup-level-five-question";
+        internal const string MissionStartupLevelFiveQuestionText =
+            "Görevi anlatan bir resim seçer misin?\nSeçeceğin resim bir film yada bir oyun sahnesi olabilir.";
         // Messages
         internal const string LtsInfoBoxText =
             "Limitsiz\nKatılımcılar herhangi bir limite ulaşmaya çalışmadan en iyiyi yapmayı hedeflemeli.";
