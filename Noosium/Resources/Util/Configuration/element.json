@@ -35,7 +35,10 @@
             "mission-startup-level-three-ql-editor-underline": ".ql-underline",
             "mission-startup-level-three-ql-editor-list-item-one": ".ql-list:nth-child(1)",
             "mission-startup-level-three-ql-editor-list-item-two": ".ql-list:nth-child(2)",
-            "mission-startup-level-three-ql-editor-clean": ".ql-clean"
+            "mission-startup-level-three-ql-editor-clean": ".ql-clean",
+            "mission-startup-level-four-ql-blank": ".ql-blank",
+            "mission-startup-level-four-ql-blank-editor": ".field:nth-child(2) .ql-editor",
+            "mission-startup-level-four-question": ".right:nth-child(4) > .ui"
         }
     }
 }

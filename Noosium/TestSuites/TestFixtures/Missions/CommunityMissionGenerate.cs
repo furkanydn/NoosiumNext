@@ -28,7 +28,7 @@ namespace Noosium.TestSuites.TestFixtures.Missions
         [Test, Order(1)]
         public void TC_CheckRightDefinitionOptions_ShouldBeCorrectGeneralDefinitions_WhenFillingComponentsWithGivenValues()
         {
-            CommunityMissionGenerateCase.CheckTheStages_ShouldSuccessfulMissionGenerate_WhenTheMissionMechanismIsSelected();
+            CommunityMissionGenerateCase.CheckTheStages_ShouldSuccessfullyGeneralDefinitions_WhenTheMissionDefinitionsTyped();
         }
     }
 }

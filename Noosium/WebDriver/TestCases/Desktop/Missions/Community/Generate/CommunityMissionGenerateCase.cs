@@ -17,9 +17,12 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         {
             new TestLog().Debug($"{GetDriverUrlWithOutSplit()} opening.");
             SideBar.SideBarMethod();
+        }
+        public static void CheckTheStages_ShouldSuccessfullyGeneralDefinitions_WhenTheMissionDefinitionsTyped()
+        {
             GeneralDefinitionsMethodsForLimitless();
         }
-        
+
         #region General Definitions - LTS (Limitless)
 
 
@@ -31,136 +34,40 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
             CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton();
             CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
             CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
+            CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor();
         }
 
         #endregion
 
         #region Startup
 
+        /// <summary>
+        /// When it comes to testing the mission mechanics, the first step is to decide which mechanic to use.
+        /// </summary>
         private static void CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton()
         {
-            ObjectFactory.Component.TextShortcut.Generate.Mechanism(GenerateMechanism.Lts);
+            Generate.Mechanism(GenerateMechanism.Lts);
         }
-
+        /// <summary>
+        /// The technique will be used to test the mission's name.
+        /// </summary>
         private static void CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelTwoInput)));
-            new TestLog().Information($"{ElementNames.MissionStartupLevelTwoInput} Clicked.");
-            SendKeys(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelTwoInput)),
-                ElementValues.MissionGenerateName);
-            new TestLog().Information($"{ElementValues.MissionGenerateName} Sent.");
-            Assert.That(
-                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderValue))),
-                Is.EqualTo(ElementValues.DataSix));
-            Assert.That(
-                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaLargeHeader))),
-                Is.EqualTo(ElementValues.MissionGenerateName));
-            ActionBuilders.SetFocusAndClickOnIWebElement(
-                GetElementWithByStrategy(
-                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupMissionMechanicsLtsButton} Clicked.");
+            Generate.QlEditorMissionName();
         }
-
+        /// <summary>
+        /// The technique will be used to test the mission's description.
+        /// </summary>
         private static void CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)));
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreePurposeInput} Clicked.");
-            SendKeys(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreePurposeInput)),
-                ElementValues.MissionGeneratePurpose);
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreePurposeInput} object {ElementValues.MissionGeneratePurpose} Sent.");
-
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeDescriptionInput)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorFirstText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeDescriptionInput} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorFirstText} Sent.");
-            JavaScriptFunctions.JavaScriptTillEnd();
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorBold)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorSecondText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorBold} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorSecondText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorPickerLabel)),
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorPickerLabelThr)),
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorThirdText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorPickerLabel} Clicked.");
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorPickerLabelThr} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorThirdText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorItalic)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorFourthText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorItalic} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorFourthText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorPickerLabel)),
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorPickerLabelTwo)),
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorFifthText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorPickerLabel} Clicked.");
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorPickerLabelTwo} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorFifthText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorUnderline)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorSixthText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorUnderline} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorSixthText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorListItemOne)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorSevenText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorListItemOne} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorSevenText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorListItemTwo)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorEighthText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorListItemTwo} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorEighthText} Sent.");
-            MultiActionForEditor(
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditorClean)),
-                null,
-                By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupLevelThreeQlEditor)),
-                ElementValues.QlEditorNineText);
-            new TestLog().Information($"{ElementNames.MissionStartupLevelThreeQlEditorClean} Clicked.");
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupLevelThreeQlEditor} Object. {ElementValues.QlEditorNineText} Sent.");
-
-            Assert.That(
-                GetText(By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupTopAreaHeaderValue))),
-                Is.EqualTo(ElementValues.DataTwelve));
-            ActionBuilders.SetFocusAndClickOnIWebElement(
-                GetElementWithByStrategy(
-                    By.CssSelector(JsonSoft.GetElement(ElementNames.MissionStartupContinueTheNextStep))));
-            new TestLog().Information(
-                $"{ElementNames.MissionStartupMissionMechanicsLtsButton} Clicked.");
+            Generate.QlEditorMissionDescription();
         }
-
+        /// <summary>
+        /// The scope and conditions that should be stated in the fourth step are written in this method tests.
+        /// </summary>
         private static void CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor()
         {
-
+            Generate.QlBlankRequiredConditions();
         }
 
         #endregion
