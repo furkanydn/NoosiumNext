@@ -13,7 +13,7 @@ namespace Noosium.TestSuites
         [Test,Order(0)]
         public void Missions()
         {
-            //new CommunityMissionList().TF_CommunityMissionList();
+            new CommunityMissionList().TF_CommunityMissionList();
             new CommunityMissionGenerate().TF_CommunityMissionGenerate();
         }
     }

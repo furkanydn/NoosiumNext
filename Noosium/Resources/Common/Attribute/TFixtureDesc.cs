@@ -1,6 +1,6 @@
 namespace Noosium.Resources.Common.Attribute
 {
-    public  interface IFixtureDesc
+    public static class FixtureDesc
     {
         public const string AdminMCom = "It's a test class that checks the system's list of General missions.";
         public const string AdminMgComLts =

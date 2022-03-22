@@ -1,9 +1,10 @@
+using Noosium.WebDriver.ObjectFactory.Component.Generate;
+
 namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
 {
     using Resources.Log;
     using ObjectFactory.PageObject;
     using static Resources.Util.DriverMethods.BasicDriverInterface;
-    using ObjectFactory.Component.TextShortcut;
 
     public static class CommunityMissionGenerateCase
     {
@@ -26,11 +27,13 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void GeneralDefinitionsMethodsForLimitless()
         {
+            //Startup
             CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton();
             CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
             CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor();
             CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor();
             CheckImageSelect_ShouldChooseTheRightImage_WhenImageSelectedFromTheImageSelector();
+            //Listing
         }
 
         #endregion
@@ -42,7 +45,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckMechanism_ShouldGenerateLimitlessMission_WhenClickedLimitlessButton()
         {
-            Generate.Mechanism(GenerateMechanism.Lts);
+            GenerateStartup.Mechanism(GenerateMechanism.Lts);
         }
 
         /// <summary>
@@ -50,7 +53,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckHaveFilled_ShouldMissionNameTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
-            Generate.QlEditorMissionName();
+            GenerateStartup.QlEditorMissionName();
         }
 
         /// <summary>
@@ -58,7 +61,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckHaveFilled_ShouldMissionDescriptionTypedCorrectly_WhenTypeTheTextFieldsInTheQlEditor()
         {
-            Generate.QlEditorMissionDescription();
+            GenerateStartup.QlEditorMissionDescription();
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor()
         {
-            Generate.QlBlankRequiredConditions();
+            GenerateStartup.QlBlankRequiredConditions();
         }
 
         /// <summary>
@@ -74,7 +77,16 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckImageSelect_ShouldChooseTheRightImage_WhenImageSelectedFromTheImageSelector()
         {
-            Generate.VisualIllustratesTheStoryOfTheMission();
+            GenerateStartup.VisualIllustratesTheStoryOfTheMission();
+        }
+
+        #endregion
+
+        #region Listing
+
+        private static void CheckListingStage_ShouldListingComponentsRightResponse_WhenNecessaryInfoIsEnteredInTheComponents()
+        {
+            GenerateListing.MissionGenerateListing();
         }
 
         #endregion

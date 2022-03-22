@@ -44,7 +44,17 @@
             "mission-startup-level-five-accept-button": ".linkedin:nth-child(2)",
             "mission-startup-level-five-content-two": ".oo-image:nth-child(2) .content",
             "mission-startup-level-five-delete": ".delete",
-            "mission-startup-level-five-question": ".right:nth-child(5) > .ui"
+            "mission-startup-level-five-question": ".right:nth-child(5) > .ui",
+            "mission-listing-component-one": ".right > .required > .large > .ui:nth-child(1)",
+            "mission-listing-component-card-input": ".oo-card-input > input",
+            "mission-listing-component-right-required": ".right > .required .ui:nth-child(2)",
+            "mission-listing-basic-content-header-child-two": ".basic:nth-child(2) > .content > .header",
+            "mission-listing-basic-header": ".basic:nth-child(3) .header",
+            "mission-listing-basic-content-header-child-one": ".basic:nth-child(1) > .content > .header",
+            "mission-listing-component-required-child-one": ".required:nth-child(1) > .ui > .ui:nth-child(1)",
+            "mission-listing-component-required-up": ".required .up",
+            "mission-listing-component-required-down": ".required .down",
+            "mission-listing-child-one-child-two": ".required:nth-child(1) > .ui > .ui:nth-child(2)"
         }
     }
 }

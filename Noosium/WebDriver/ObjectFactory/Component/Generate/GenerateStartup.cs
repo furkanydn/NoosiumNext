@@ -1,4 +1,4 @@
-namespace Noosium.WebDriver.ObjectFactory.Component.TextShortcut
+namespace Noosium.WebDriver.ObjectFactory.Component.Generate
 {
     using System;
     using Resources.Log;
@@ -8,7 +8,7 @@ namespace Noosium.WebDriver.ObjectFactory.Component.TextShortcut
     using NUnit.Framework;
     using OpenQA.Selenium;
     using static Resources.Util.DriverMethods.BasicDriverInterface;
-    public static class Generate
+    public static class GenerateStartup
     {
         public static void Mechanism(GenerateMechanism generateMechanism)
         {

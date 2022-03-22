@@ -4,12 +4,12 @@ namespace Noosium.TestSuites.TestFixtures.Missions
     using Noosium.WebDriver.TestCases.Desktop.Missions.Community.List;
     using NUnit.Framework;
 
-    [Author(IFixtureAuthorAttr.Admin),
-     Category(ICategoryName.AdminM),
-     Description(IFixtureDesc.AdminMCom),
+    [Author(FixtureAuthor.Admin),
+     Category(CategoryName.Regression),
+     Description(FixtureDesc.AdminMCom),
      NonParallelizable,
      Order(1),
-     Platform(Exclude = IFixtureE.Exclude),
+     Platform(Exclude = FixtureExclude.Exclude),
      TestFixture]
     public class CommunityMissionList
     {
@@ -22,7 +22,7 @@ namespace Noosium.TestSuites.TestFixtures.Missions
             CorrectMissionDisplayed_When_SwitchTheMenus();
         }
 
-        [Test, Order(0)]
+        [Test, Order(0), Property(CaseSeverity.Severity,CaseSeverity.Critical)]
         public void CorrectMissionDisplayed_When_SwitchTheMenus()
         {
             MissionCommunityList.CheckComponent_ShouldGetUserMissionList_WhenPrimaryMenuClicked();
