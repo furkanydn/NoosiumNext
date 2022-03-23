@@ -1,3 +1,5 @@
+using Noosium.Resources.Util.ActionBuilder;
+
 namespace Noosium.WebDriver.ObjectFactory.Component.Generate
 {
     using Resources.Util;
@@ -39,6 +41,11 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
             }
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingChildOneChildTwo)));
             new TestLog().Information($"{ListingStruct.MissionListingChildOneChildTwo} Clicked.");
+            ActionBuilders.SetFocusAndClickOnIWebElement(
+                GetElementWithByStrategy(
+                    By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionStartupContinueTheNextStep))));
+            new TestLog().Information(
+                $"{ListingStruct.MissionStartupContinueTheNextStep} Clicked.");
         }
 
         private struct ListingStruct
@@ -57,6 +64,7 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
             internal const string MissionListingComponentRequiredDown = "mission-listing-component-required-down";
             internal const string MissionListingChildOneChildTwo = "mission-listing-child-one-child-two";
             internal const string MissionListingText = "Görev Arama";
+            internal const string MissionStartupContinueTheNextStep = "mission-startup-continue-the-next-step";
         }
     }
 }

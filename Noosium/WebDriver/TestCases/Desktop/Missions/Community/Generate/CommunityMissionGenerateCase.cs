@@ -34,6 +34,11 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
             CheckHaveFilled_ShouldMissionRequiredConditionsMetRight_WhenTypeTheTextFieldsInTheQlEditor();
             CheckImageSelect_ShouldChooseTheRightImage_WhenImageSelectedFromTheImageSelector();
             //Listing
+            CheckListingStage_ShouldListingComponentsRightResponse_WhenNecessaryInfoIsEnteredInTheComponents();
+            //Timing
+            CheckTimingStage_ShouldTimingComponentsRightValues_WhenTimingComponentsSendValues();
+            CheckTimingStage_ShouldTimingCalendarComponentValue_WhenCalendarComponentSendValues();
+            //Calculation
         }
 
         #endregion
@@ -84,9 +89,43 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
 
         #region Listing
 
-        private static void CheckListingStage_ShouldListingComponentsRightResponse_WhenNecessaryInfoIsEnteredInTheComponents()
+        /// <summary>
+        /// It is a test method with task mechanics listing functions under general definitions on the mission generate page.
+        /// </summary>
+        private static void
+            CheckListingStage_ShouldListingComponentsRightResponse_WhenNecessaryInfoIsEnteredInTheComponents()
         {
             GenerateListing.MissionGenerateListing();
+        }
+
+        #endregion
+
+        #region Timing
+
+        /// <summary>
+        /// This test method evaluates whether or not to use a single-time calculation, which is the default option during the scheduling stage.
+        /// </summary>
+        private static void CheckTimingStage_ShouldTimingComponentsRightValues_WhenTimingComponentsSendValues()
+        {
+            GenerateTiming.MissionGenerateTimingOneTimeTask();
+        }
+
+        /// <summary>
+        /// During the scheduling phase, this test method examines the tests of the task's calendar entry field.
+        /// </summary>
+        private static void CheckTimingStage_ShouldTimingCalendarComponentValue_WhenCalendarComponentSendValues()
+        {
+            GenerateTiming.MissionGenerateTimingCalendar();
+        }
+
+        #endregion
+
+        #region Calculation
+
+        private static void
+            CheckCalculationStage_ShouldCalendarComponentRightValue_WhenValuesEnteredInTheCalendarField()
+        {
+            //todo
         }
 
         #endregion

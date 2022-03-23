@@ -54,7 +54,13 @@
             "mission-listing-component-required-child-one": ".required:nth-child(1) > .ui > .ui:nth-child(1)",
             "mission-listing-component-required-up": ".required .up",
             "mission-listing-component-required-down": ".required .down",
-            "mission-listing-child-one-child-two": ".required:nth-child(1) > .ui > .ui:nth-child(2)"
+            "mission-listing-child-one-child-two": ".required:nth-child(1) > .ui > .ui:nth-child(2)",
+            "mission-timing-level-one-child-two": ".right > .required > .large > .ui:nth-child(2)",
+            "mission-timing-level-one-child-one": ".right > .required > .large > .ui:nth-child(1)",
+            "mission-timing-level-two-calendar-default": ".oo-default",
+            "mission-timing-level-two-calendar-left": ".rc-calendar-range-left .rc-calendar-input",
+            "mission-timing-level-two-calendar-right": ".rc-calendar-range-right .rc-calendar-input",
+            "mission-timing-level-two-calendar-ok-btn": ".rc-calendar-ok-btn"
         }
     }
 }
