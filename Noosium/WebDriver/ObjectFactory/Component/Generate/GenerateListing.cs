@@ -21,6 +21,21 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
                 $"{ListingStruct.MissionListingComponentCardInput} object {ListingStruct.MissionListingText} Sent.");
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingComponentRightRequired)));
             new TestLog().Information($"{ListingStruct.MissionListingComponentRightRequired} Clicked.");
+            //
+            if (GetElementsSize(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingComponentCardSize)))>0)
+            {
+                for (var i = 1; i < GetElementsSize(By.XPath(ListingStruct.MissionListingComponentCardSize)); i++)
+                {
+                    ClickOnElement(By.CssSelector(JsonSoft.GetElement(
+                        ListingStruct.MissionListingBasicContentHeaderBase +
+                        i +
+                        ListingStruct.MissionListingBasicContentHeaderExtension)));
+                    new TestLog().Information($"{ListingStruct.MissionListingBasicContentHeaderBase}" 
+                                              + i +
+                                              $"{ListingStruct.MissionListingBasicContentHeaderExtension}");
+                }
+            }
+            //
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingBasicContentHeaderChildTwo)));
             new TestLog().Information($"{ListingStruct.MissionListingBasicContentHeaderChildTwo} Clicked.");
             ClickOnElement(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingBasicHeader)));
@@ -53,6 +68,9 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
             internal const string MissionListingComponentOne = "mission-listing-component-one";
             internal const string MissionListingComponentCardInput = "mission-listing-component-card-input";
             internal const string MissionListingComponentRightRequired = "mission-listing-component-right-required";
+            internal const string MissionListingComponentCardSize = "mission-listing-component-card-size";
+            internal const string MissionListingBasicContentHeaderBase = "mission-listing-basic-content-header-base";
+            internal const string MissionListingBasicContentHeaderExtension = "mission-listing-basic-content-header-extension";
             internal const string MissionListingBasicContentHeaderChildTwo =
                 "mission-listing-basic-content-header-child-two";
             internal const string MissionListingBasicHeader = "mission-listing-basic-header";

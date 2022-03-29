@@ -62,6 +62,12 @@ namespace Noosium.Resources.Util.DriverMethods
             Driver.FindElement(locator).Click();
         }
 
+        public static int GetElementsSize(By locator)
+        {
+            WaitTimeOut.WaitForElementVisible(locator);
+            var size = Driver.FindElements(locator).Count;
+            return size;
+        }
         /// <summary>
         /// Gets a value indicating whether or not this element is selected.
         /// </summary>
