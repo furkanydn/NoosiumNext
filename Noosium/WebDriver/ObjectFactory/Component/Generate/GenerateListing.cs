@@ -24,7 +24,7 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
             //
             if (GetElementsSize(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingComponentCardSize)))>0)
             {
-                for (var i = 1; i < GetElementsSize(By.XPath(ListingStruct.MissionListingComponentCardSize)); i++)
+                for (var i = 1; i < GetElementsSize(By.CssSelector(JsonSoft.GetElement(ListingStruct.MissionListingComponentCardSize))); i++)
                 {
                     ClickOnElement(By.CssSelector(JsonSoft.GetElement(
                         ListingStruct.MissionListingBasicContentHeaderBase +
