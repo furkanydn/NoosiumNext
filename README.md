@@ -28,4 +28,4 @@ You must first download an IDE that can execute C# apps, such as Rider or Visual
 
 - (MacOS & Linux): To enable VSTest adapters support, select the corresponding checkbox on the Build, Execution, Deployment | Unit Testing | VSTest page of JetBrains Rider settings ⌃ ⌥ S.
 
-- (Windows): To enable VSTest adapters support, select the corresponding checkbox on the Build, Execution, Deployment | Unit Testing | VSTest page of JetBrains Rider settings ⌃ ⌥ S.
+- (Windows): To enable VSTest adapters support, select the corresponding checkbox on the Build, Execution, Deployment | Unit Testing | VSTest page of JetBrains Rider settings ⌃ ⌥ S.# Motivist.Test

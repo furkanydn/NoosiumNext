@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Noosium.WebDriver.Mock;
 using OpenQA.Selenium;
 
@@ -29,7 +30,7 @@ public class JavaScriptFunctions : BaseMockDriver
     /// <param name="value">An value containing data that will be passed to the event handler.</param>
     public static void JavaScriptClick(string value)
     {
-        GetJavaScriptExecutor().ExecuteScript("$('" + value + "').trigger('click')");
+        GetJavaScriptExecutor().ExecuteScript($"$('{value}').trigger('click')");
     }
 
     /// <summary>
@@ -57,7 +58,7 @@ public class JavaScriptFunctions : BaseMockDriver
     /// <param name="yAxis">is the pixel along the vertical axis of the document that you want displayed in the upper left.</param>
     public static void JavaScriptTillPoint(string xAxis, string yAxis)
     {
-        GetJavaScriptExecutor().ExecuteScript("scroll(" + xAxis + "," + yAxis + ");");
+        GetJavaScriptExecutor().ExecuteScript($"scroll({xAxis},{yAxis});");
     }
 
     /// <summary>
@@ -69,6 +70,17 @@ public class JavaScriptFunctions : BaseMockDriver
     public static void JavaScriptExeScript(By locator, string script)
     {
         var element = Driver.FindElement(locator);
-        GetJavaScriptExecutor().ExecuteScript(script, element);
+        if (element == null) return;
+        Debug.Assert(element != null, nameof(element) + " != null");
+        try
+        {
+            GetJavaScriptExecutor().ExecuteScript(script, element);
+        }
+        catch (NotSupportedException e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
     }
 }

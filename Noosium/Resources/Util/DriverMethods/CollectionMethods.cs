@@ -7,7 +7,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Noosium.Resources.Util.DriverMethods;
 
-public class CollectionMethods : BaseMockDriver
+internal class CollectionMethods : BaseMockDriver
 {
     /// <summary>
     /// Finds all IWebElements within the current context using the given mechanism.

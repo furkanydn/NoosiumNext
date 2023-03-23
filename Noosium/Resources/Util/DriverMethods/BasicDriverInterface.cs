@@ -196,7 +196,8 @@ namespace Noosium.Resources.Util.DriverMethods
             }
             catch (ArgumentException argumentException)
             {
-                Debug.WriteLine("One or more of the required elements for sending to the method are missing.");
+                Debug.WriteLine(
+                    $"One or more of the required elements for sending to the method are missing.{argumentException}");
             }
         }
     }
