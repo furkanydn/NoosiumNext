@@ -95,7 +95,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         private static void
             CheckListingStage_ShouldListingComponentsRightResponse_WhenNecessaryInfoIsEnteredInTheComponents()
         {
-            GenerateListing.MissionGenerateListing();
+            GenerateListing.MGenerateListing();
         }
 
         #endregion
@@ -115,18 +115,12 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.Generate
         /// </summary>
         private static void CheckTimingStage_ShouldTimingCalendarComponentValue_WhenCalendarComponentSendValues()
         {
-            GenerateTiming.MissionGenerateTimingCalendar();
+            GenerateTiming.GenerateTimingCalendar();
         }
 
         #endregion
 
         #region Calculation
-
-        private static void
-            CheckCalculationStage_ShouldCalendarComponentRightValue_WhenValuesEnteredInTheCalendarField()
-        {
-            //todo
-        }
 
         #endregion
     }

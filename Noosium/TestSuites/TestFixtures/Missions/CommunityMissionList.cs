@@ -25,11 +25,11 @@ namespace Noosium.TestSuites.TestFixtures.Missions
         [Test, Order(0), Property(CaseSeverity.Severity,CaseSeverity.Critical)]
         public void CorrectMissionDisplayed_When_SwitchTheMenus()
         {
-            MissionCommunityList.CheckComponent_ShouldGetUserMissionList_WhenPrimaryMenuClicked();
+            CommunityList.CheckComponent_ShouldGetUserMissionList_WhenPrimaryMenuClicked();
 
-            MissionCommunityList.CheckComponent_ShouldGetMissionListDetails_WhenSecondaryMenuClicked();
+            CommunityList.CheckComponent_ShouldGetMissionListDetails_WhenSecondaryMenuClicked();
 
-            MissionCommunityList.CheckComponent_ShouldGetActiveMenuMissionCount_WhenSecondaryMenuFirstClicked();
+            CommunityList.CheckComponent_ShouldGetActiveMenuMissionCount_WhenSecondaryMenuFirstClicked();
         }
     }
 }

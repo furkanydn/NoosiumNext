@@ -8,10 +8,10 @@ namespace Noosium.Resources.Util
     [Serializable]
     public class JsonSoft
     {
-        private static string _appSettings = AppContext.BaseDirectory + @"Resources/appsettings.json";
-        private static string _contextJson = AppContext.BaseDirectory + @"Resources/Util/Configuration/context.json";
-        private static string _cridJson = AppContext.BaseDirectory + @"Resources/Util/Configuration/crid.json";
-        private static string _elementJson = AppContext.BaseDirectory + @"Resources/Util/Configuration/element.json";
+        private static string _appSettings = $@"{AppContext.BaseDirectory}Resources/appsettings.json";
+        private static string _contextJson = $@"{AppContext.BaseDirectory}Resources/Util/Configuration/context.json";
+        private static string _cridJson = $@"{AppContext.BaseDirectory}Resources/Util/Configuration/crid.json";
+        private static string _elementJson = $@"{AppContext.BaseDirectory}Resources/Util/Configuration/element.json";
 
         /// <summary>
         /// Deserializes the JSON to a .NET object.

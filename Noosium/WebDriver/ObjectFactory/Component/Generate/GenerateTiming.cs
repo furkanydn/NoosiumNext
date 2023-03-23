@@ -10,43 +10,43 @@ namespace Noosium.WebDriver.ObjectFactory.Component.Generate
     {
         public static void MissionGenerateTimingOneTimeTask()
         {
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelOneChildTwo)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelOneChildTwo} Clicked.");
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelOneChildOne)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelOneChildOne} Clicked.");
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionStartupContinueTheNextStep)));
-            new TestLog().Information($"{TimingStruct.MissionStartupContinueTheNextStep} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelOneChildTwo)));
+            new TestLog().Information($"{TimingStruct.TimingLevelOneChildTwo} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelOneChildOne)));
+            new TestLog().Information($"{TimingStruct.TimingLevelOneChildOne} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.StartupContinueTheNextStep)));
+            new TestLog().Information($"{TimingStruct.StartupContinueTheNextStep} Clicked.");
         }
 
-        public static void MissionGenerateTimingCalendar()
+        public static void GenerateTimingCalendar()
         {
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarDefault)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelTwoCalendarDefault} Clicked.");
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarLeft)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelTwoCalendarLeft} Clicked.");
-            SendKeys(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarLeft)),TimingStruct.MissionTimingLevelTwoCalendarLeftText);
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarDefault)));
+            new TestLog().Information($"{TimingStruct.TimingLevelTwoCalendarDefault} Clicked.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarLeft)));
+            new TestLog().Information($"{TimingStruct.TimingLevelTwoCalendarLeft} Clicked.");
+            SendKeys(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarLeft)),TimingStruct.TimingLevelTwoCalendarLeftText);
             new TestLog().Information(
-                $"{TimingStruct.MissionTimingLevelTwoCalendarLeft} object {TimingStruct.MissionTimingLevelTwoCalendarLeftText} Sent.");
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarRight)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelTwoCalendarRight} Clicked.");
-            SendKeys(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarRight)),TimingStruct.MissionTimingLevelTwoCalendarRightText);
+                $"{TimingStruct.TimingLevelTwoCalendarLeft} object {TimingStruct.TimingLevelTwoCalendarLeftText} Sent.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarRight)));
+            new TestLog().Information($"{TimingStruct.TimingLevelTwoCalendarRight} Clicked.");
+            SendKeys(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarRight)),TimingStruct.TimingLevelTwoCalendarRightText);
             new TestLog().Information(
-                $"{TimingStruct.MissionTimingLevelTwoCalendarRight} object {TimingStruct.MissionTimingLevelTwoCalendarRightText} Sent.");
-            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.MissionTimingLevelTwoCalendarOkBtn)));
-            new TestLog().Information($"{TimingStruct.MissionTimingLevelTwoCalendarOkBtn} Clicked.");
+                $"{TimingStruct.TimingLevelTwoCalendarRight} object {TimingStruct.TimingLevelTwoCalendarRightText} Sent.");
+            ClickOnElement(By.CssSelector(JsonSoft.GetElement(TimingStruct.TimingLevelTwoCalendarOkBtn)));
+            new TestLog().Information($"{TimingStruct.TimingLevelTwoCalendarOkBtn} Clicked.");
         }
 
         private struct TimingStruct
         {
-            internal const string MissionTimingLevelOneChildTwo = "mission-timing-level-one-child-two";
-            internal const string MissionTimingLevelOneChildOne = "mission-timing-level-one-child-one";
-            internal const string MissionStartupContinueTheNextStep = "mission-startup-continue-the-next-step";
-            internal const string MissionTimingLevelTwoCalendarDefault = "mission-timing-level-two-calendar-default";
-            internal const string MissionTimingLevelTwoCalendarLeft = "mission-timing-level-two-calendar-left";
-            internal const string MissionTimingLevelTwoCalendarRight = "mission-timing-level-two-calendar-default";
-            internal const string MissionTimingLevelTwoCalendarOkBtn = "mission-timing-level-two-calendar-ok-btn";
-            internal const string MissionTimingLevelTwoCalendarLeftText = "10.03.2022 12:30";
-            internal const string MissionTimingLevelTwoCalendarRightText = "30.03.2022 00:00";
+            internal const string TimingLevelOneChildTwo = "mission-timing-level-one-child-two";
+            internal const string TimingLevelOneChildOne = "mission-timing-level-one-child-one";
+            internal const string StartupContinueTheNextStep = "mission-startup-continue-the-next-step";
+            internal const string TimingLevelTwoCalendarDefault = "mission-timing-level-two-calendar-default";
+            internal const string TimingLevelTwoCalendarLeft = "mission-timing-level-two-calendar-left";
+            internal const string TimingLevelTwoCalendarRight = "mission-timing-level-two-calendar-default";
+            internal const string TimingLevelTwoCalendarOkBtn = "mission-timing-level-two-calendar-ok-btn";
+            internal const string TimingLevelTwoCalendarLeftText = "10.03.2022 12:30";
+            internal const string TimingLevelTwoCalendarRightText = "30.03.2022 00:00";
         }
     }
 }

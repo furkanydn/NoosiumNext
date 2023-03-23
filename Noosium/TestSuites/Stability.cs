@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -34,7 +33,7 @@ public class Stability
     {
         StartTestCase("https://test.motivist.com/");
         ClickAndSendKeys(By.Id("username"),"furkan.aydin");
-        ClickAndSendKeys(By.Id("password"),"Hadate25.");
+        ClickAndSendKeys(By.Id("password"),"NOOS25.");
         ClickAndSendKeys(By.Id("captchaCode"),"NOOSN");
         _webDriver.FindElement(By.Name("button")).Click();
     }

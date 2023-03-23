@@ -58,13 +58,13 @@ namespace Noosium.Resources.Util.DriverMethods
         /// <param name="locator">An ICoordinates describing where to click.</param>
         public static void ClickOnElement(By locator)
         {
-            WaitTimeOut.WaitForElementVisible(locator);
+            WaitTimeOut.WaitForElementVisible(locator: locator);
             Driver.FindElement(locator).Click();
         }
 
         public static int GetElementsSize(By locator)
         {
-            WaitTimeOut.WaitForElementVisible(locator);
+            WaitTimeOut.WaitForElementVisible(locator: locator);
             var size = Driver.FindElements(locator).Count;
             return size;
         }

@@ -95,12 +95,12 @@ public class BasicMethods : BaseMockDriver
     public static void ManageFailure(Exception exception, string screenshotpath=@"Screenshot")
     {
         TestContext.WriteLine(exception.HResult);
-        TestContext.WriteLine("The Message is :" + exception.Message);
-        TestContext.WriteLine("The Source is :" + exception.Source);
-        TestContext.WriteLine("The InnerException is :" + exception.InnerException);
-        TestContext.WriteLine("The StackTrace is :" + exception.StackTrace);
-        TestContext.WriteLine("TargetSite is :" + exception.TargetSite);
-        TestContext.WriteLine("Data is :" + exception.Data);
+        TestContext.WriteLine($"The Message is :{exception.Message}");
+        TestContext.WriteLine($"The Source is :{exception.Source}");
+        TestContext.WriteLine($"The InnerException is :{exception.InnerException}");
+        TestContext.WriteLine($"The StackTrace is :{exception.StackTrace}");
+        TestContext.WriteLine($"TargetSite is :{exception.TargetSite}");
+        TestContext.WriteLine($"Data is :{exception.Data}");
         TakesScreenShot.TakesScreenshot(screenshotpath);
     }
 }

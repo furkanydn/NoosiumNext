@@ -6,7 +6,7 @@ namespace Noosium.WebDriver.TestCases.Desktop.Missions.Community.List
     using OpenQA.Selenium;
     using static Resources.Util.DriverMethods.BasicDriverInterface;
 
-    public static class MissionCommunityList
+    public static class CommunityList
     {
         public static void CheckComponent_ShouldGetUserMissionList_WhenPrimaryMenuClicked()
         {

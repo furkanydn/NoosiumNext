@@ -1,5 +1,3 @@
-using NUnit.Framework.Internal;
-
 namespace Noosium.WebDriver.Mock
 {
     using NUnit.Framework;
